@@ -61,13 +61,11 @@
         (set-keymap-parent input-decode-map map))))
 
 ;; theme
-;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'zenburn t)
 
 ;; turn on modes
 (diff-hl-margin-mode 1)
 (diff-hl-flydiff-mode 1)
-;(hs-minor-mode 1)
 
 ;; rainbow brackets
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
@@ -93,7 +91,10 @@
 
 ;turn off some prelude stuff
 (setq prelude-guru nil)
-(setq prelude-whitespace nil)
+(setq prelude-whitespace 1)
+
+;set backup dir
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 
 ;;delete to trash
 (when (eq system-type 'darwin)
