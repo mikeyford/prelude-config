@@ -91,7 +91,7 @@
 
 ;turn off some prelude stuff
 (setq prelude-guru nil)
-(setq prelude-whitespace 1)
+(setq prelude-whitespace nil)
 
 ;set backup dir
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
