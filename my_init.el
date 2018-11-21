@@ -114,3 +114,9 @@
   (local-set-key (kbd "C-<down>") (kbd "C-u 10 <down>")))
 
 (add-hook 'dired-mode-hook 'dired-mode-key-bindings-hook)
+
+
+(defun ein-mode-key-bindings-hook ()
+  (local-set-key (kbd "<C-return>") 'ein:worksheet-execute-cell))
+
+(add-hook 'ein:notebook-mode 'ein-mode-key-bindings-hook)
