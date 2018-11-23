@@ -53,6 +53,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(linum ((t (:background "#3F3F3F" :foreground "gray49" :weight normal :height 1.0 :width normal))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "pink1"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "khaki2"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "DarkSeaGreen1"))))

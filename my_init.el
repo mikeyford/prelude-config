@@ -41,8 +41,8 @@
                             ;ipcalc
                             ;ob-async
                             pyvenv
-                            ;ein
-                            ;nyan-mode
+                            ein
+                            nyan-mode
 
                             ))
 
@@ -68,12 +68,17 @@
 (diff-hl-flydiff-mode 1)
 
 ;; rainbow brackets
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-(add-hook 'prog-mode-hook #'hs-minor-mode)
+(defun prog-mode-hooks ()
+  (rainbow-delimiters-mode)
+  (hs-minor-mode)
+  (linum-mode)
+  (nyan-mode))
+                                      
+(add-hook 'prog-mode-hook 'prog-mode-hooks)
 
 ;; font
 (set-face-attribute 'default nil
-                    :family "Inconsolata" :height 145 :weight 'bold)
+                    :family "Inconsolata" :height 145 :weight 'normal)
 
 ;; clojure
 (require 'flycheck-joker)
@@ -116,7 +121,3 @@
 (add-hook 'dired-mode-hook 'dired-mode-key-bindings-hook)
 
 
-(defun ein-mode-key-bindings-hook ()
-  (local-set-key (kbd "<C-return>") 'ein:worksheet-execute-cell))
-
-(add-hook 'ein:notebook-mode 'ein-mode-key-bindings-hook)
